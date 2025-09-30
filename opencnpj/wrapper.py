@@ -17,7 +17,7 @@ class OpenCNPJ():
         url = self.url + self.parse_cnpj(cnpj)
         response = requests.get(
             url=url,
-            verify=False, # Set verify to False to disable SSL certificate checking
+            verify=True, # Set verify to False to disable SSL certificate checking
             )
 
         if response.status_code == 404:
