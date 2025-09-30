@@ -37,8 +37,3 @@ class OpenCNPJ():
             raise "Valid CNPJ numbers have 14 digits"
 
         return cnpj
-
-if __name__ == "__main__":
-    o = OpenCNPJ()
-    result = o.find_by_cnpj(cnpj="00.000.000/0001-91")
-    print(result)
