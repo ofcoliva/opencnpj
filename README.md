@@ -130,11 +130,6 @@ print(empresa.cnpj)
 
 ---
 
-## Contribuição
-
-Pull requests são bem-vindos! Para maiores informações, acesse o [repositório no GitHub](https://github.com/ofcoliva/opencnpj).
-
-
 ## Empacotando a Biblioteca
 
 Para criar um pacote distribuível da biblioteca, siga os passos abaixo:
@@ -158,6 +153,12 @@ Isso irá criar os arquivos `.tar.gz` e `.whl` na pasta `dist/`.
 
 
 Agora sua biblioteca estará empacotada!
+---
+
+## Contribuição
+
+Pull requests são bem-vindos! Para maiores informações, acesse o [repositório no GitHub](https://github.com/ofcoliva/opencnpj).
+
 ---
 
 ## Licença
