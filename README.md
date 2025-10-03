@@ -118,7 +118,7 @@ O objeto retornado (`empresa`) possui todos os campos do cadastro do CNPJ.
 Você pode listar os campos disponíveis assim:
 
 ```python
-print(empresa.campos)  # Lista os nomes dos campos disponíveis
+print(empresa.fields)  # Lista os nomes dos campos disponíveis
 ```
 
 Ou acessar diretamente:
@@ -134,6 +134,30 @@ print(empresa.cnpj)
 
 Pull requests são bem-vindos! Para maiores informações, acesse o [repositório no GitHub](https://github.com/ofcoliva/opencnpj).
 
+
+## Empacotando a Biblioteca
+
+Para criar um pacote distribuível da biblioteca, siga os passos abaixo:
+
+1. **Certifique-se de que o `setuptools` e o `wheel` estão instalados:**
+
+```bash
+pip install setuptools wheel
+```
+
+2. **Gere os arquivos de distribuição:**
+
+No diretório do projeto (onde está o `setup.py`), execute:
+
+```bash
+python setup.py sdist bdist_wheel
+```
+
+Isso irá criar os arquivos `.tar.gz` e `.whl` na pasta `dist/`.
+
+
+
+Agora sua biblioteca estará empacotada!
 ---
 
 ## Licença
