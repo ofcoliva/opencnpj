@@ -1,9 +1,8 @@
-# opencnpj/client.py
-
 import requests
 import re
 
-# Importe todas as suas novas exceções
+from opencnpj.model import CNPJ
+
 from .exceptions import (
     NetworkError,
     RateLimitError,
@@ -57,6 +56,6 @@ class OpenCNPJ:
 
         return cnpj
 
-    def find_by_cnpj(self, cnpj: str):
-        """Recupera os dados de uma empresa a partir do seu CNPJ."""
-        return self._request(cnpj)
+    def find_by_cnpj(self, cnpj: str) -> CNPJ:
+        """Transforma o retorno da _request em um objeto CNPJ e retornará o próprio objeto CNPJ"""
+        return CNPJ(**self._request(cnpj))

@@ -10,5 +10,5 @@ setup(
     author_email="ofcoliva@gmail.com",
     keywords="opencnpj api cnpj",
     packages=["opencnpj"],
-    install_requires=["requests", "pip_system_certs"]
+    install_requires=["requests", "pip_system_certs", "pydantic"]
 )
