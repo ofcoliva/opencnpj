@@ -2,6 +2,15 @@ from pydantic import BaseModel, Field, field_validator
 from typing import List, Optional
 from datetime import date
 
+class BaseModel(BaseModel):
+    
+    @property
+    def fields(self):
+        """
+        Retorna os campos disponíveis em CNPJ para serem acessados.
+        """
+        return list(self.__pydantic_fields__.keys())
+
 class Telefone(BaseModel):
     """
     Representa um telefone de contato da empresa.
