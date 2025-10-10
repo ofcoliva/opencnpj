@@ -9,7 +9,7 @@ class BaseModel(BaseModel):
         """
         Retorna os campos disponíveis em CNPJ para serem acessados.
         """
-        return list(self.__pydantic_fields__.keys())
+        return list(self.model_fields.keys())
 
 class Telefone(BaseModel):
     """
@@ -61,10 +61,13 @@ class CNPJ(BaseModel):
     data_opcao_mei: Optional[date] = None
     qsa: List[Socio] = Field(..., alias='QSA')
 
-    @field_validator('data_opcao_mei', mode='before')
+    @field_validator('data_opcao_simples', 'data_opcao_mei', mode='before')
     @classmethod
-    def handle_invalid_dates(cls, valor_recebido):
-        if isinstance(valor_recebido, str) and valor_recebido in ('0000-00-00', '0'):
+    def handle_invalid_dates(cls, value):
+        """
+        Converte valores de data inválidos (como strings vazias ou '0000-00-00') para None
+        antes da tentativa de validação do tipo 'date'.
+        """
+        if isinstance(value, str) and value.strip() in ('', '0000-00-00', '0'):
             return None
-        
-        return valor_recebido
+        return value
