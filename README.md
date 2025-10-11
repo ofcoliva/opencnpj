@@ -30,7 +30,28 @@ Atualmente, as requisições são síncronas. Futuramente, poderão ser adiciona
 pip install opencnpj
 ```
 
----
+
+## Adicionando dependencias
+
+Crie o ambiente virtual
+```bash
+python -m venv venv
+```
+Se estiver usando Linux use:
+```bash
+source venv/bin/activate
+```
+
+Se estiver usando Windows use:
+```powershell
+.\venv\Scripts\activate
+```
+
+Último passo instale as bibliotecas necesárias.
+
+```python
+pip install requests pydantic pip_system_certs 
+```
 
 ## Uso Básico
 
