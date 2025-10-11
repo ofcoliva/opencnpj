@@ -30,7 +30,27 @@ Atualmente, as requisições são síncronas. Futuramente, poderão ser adiciona
 pip install opencnpj
 ```
 
----
+## Adicionando dependencias
+
+Crie o ambiente virtual
+```bash
+$ python -m venv venv
+```
+Se estiver usando Linux use:
+```bash
+$ source venv/bin/activate
+```
+
+Se estiver usando Windows use:
+```powershell
+.\venv\Scripts\activate
+```
+
+Último passo instale as bibliotecas necesárias.
+
+```python
+pip install requests pydantic pip_system_certs 
+```
 
 ## Uso Básico
 
@@ -39,7 +59,7 @@ from opencnpj import OpenCNPJ
 
 client = OpenCNPJ()
 empresa = client.find_by_cnpj("00.000.000/0001-91")
-print(empresa.razao_social)
+print(empresa)
 ```
 
 ---
